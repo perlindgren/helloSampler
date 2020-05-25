@@ -18,25 +18,26 @@
 //==============================================================================
 /**
 */
-class HelloSamplerAudioProcessorEditor  : public AudioProcessorEditor,
-                                          public Timer
+class HelloSamplerAudioProcessorEditor : public AudioProcessorEditor,
+                                         public Timer
 {
 public:
-    HelloSamplerAudioProcessorEditor (HelloSamplerAudioProcessor&);
-    ~HelloSamplerAudioProcessorEditor();
+  HelloSamplerAudioProcessorEditor(HelloSamplerAudioProcessor &);
+  ~HelloSamplerAudioProcessorEditor();
 
-    //==============================================================================
-    void paint (Graphics&) override;
-    void resized() override;
-    
-    void timerCallback() override;
+  //==============================================================================
+  void paint(Graphics &) override;
+  void resized() override;
 
-private:    
-    WaveThumbnail mWaveThumbnail;
-    ADSRComponent mADSR;
-    ImageComponent mImageComponent;
-    
-    HelloSamplerAudioProcessor& processor;
+  void timerCallback() override;
 
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (HelloSamplerAudioProcessorEditor)
+private:
+  WaveThumbnail mWaveThumbnail;
+  ADSRComponent mADSR;
+  ImageComponent mImageComponent;
+  TextButton mLoadButton;
+
+  HelloSamplerAudioProcessor &processor;
+
+  JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(HelloSamplerAudioProcessorEditor)
 };
